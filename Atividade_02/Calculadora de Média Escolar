@@ -1,0 +1,15 @@
+// 1. function expression - calcularMedia
+const calcularMedia =function (nota1, nota2, nota3){
+    retunr (nota1 + nota2 + nota3) /3 }
+// 2. Arrow function - aprovação
+const aprovação = (nota) => nota >= 7;
+if (aprovação(calcularMedia(7, 10,7))){
+    console.log("Aluno Aprovado")
+}else { console.log("aluno Reprovado");
+}  
+// 3.Function Declaration - exibirNotaFinal
+functiom exibirNotaFinal (Nota) {
+    console.log("Nota Final" + Nota);
+}
+// 4. Execução
+exibirNotaFinal(Nota = calcularMedia(7, 10, 7));
