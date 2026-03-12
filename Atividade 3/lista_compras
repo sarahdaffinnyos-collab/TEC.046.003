@@ -1,0 +1,4 @@
+let lista_compras = ["Arroz, Feijão, Açúcar, Salmão"]
+lista_compras.forEach(item => {
+    console.log(item);
+})
