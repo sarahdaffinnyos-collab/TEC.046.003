@@ -1,0 +1,5 @@
+let cesta_frutas = ["maça, pera, uva, manga, goiaba, limão"]
+cesta_frutas.push("mamão, pêssego");
+cesta_frutas.forEach(fruta => {
+    console.log(fruta);
+})
