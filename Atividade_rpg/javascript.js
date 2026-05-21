@@ -18,7 +18,7 @@ class habilidade{
 }
 
 //Intantes Classes - Criar Objeto
-let hero = new Personagem("Aerion Targaryen", "😝 meninas super-poderosas",100,100,0)
+let hero = new Personagem("Aerion Targaryen", "😝 Meninas Super-Poderosas",100,100,0)
 let boss = new Personagem("Henrique Capeta", "🐵 Macaco Louco",100,0,50)
 // Prencher os Status
 document
@@ -34,8 +34,14 @@ document
 .getElementById("titulo-boss")
 .textContent = boss.titulo;
 // Criar habilidades
+let containerBtn = document.getElementById("controles");
 let listaHabilidades = [
-    new habilidade(1,)
-    new habilidade(2,)
-    new habilidade(3,)
-]
+    new habilidade(1, "⚔️ Ataque", 4, 0, 0),
+    new habilidade(2, "✨ Skills", 8, 10, 0),
+    new habilidade(3, "👾 Supremo", 15, 0, 100)
+];
+listaHabilidades.forEach(hab => {
+    let btn = document.createElement("button");//<button>
+    btn.interText = hab.home;
+    containerBtn.appendChild(btn);
+})
