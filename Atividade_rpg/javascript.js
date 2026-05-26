@@ -1,3 +1,4 @@
+// classes
 class Personagem{
     constructor(nome, titulo, hp, mana, energia){
         this.nome = nome;
@@ -5,6 +6,20 @@ class Personagem{
         this.hp = hp;
         this.mana = mana;
         this.energia = energia;
+    }
+    hero_atacar(alvo,habilidade){
+        if (this.mana >= habilidade.custo
+            && this.energia >= habilidade.energia){
+                alvo.hp = alvo.hp - habilidade.dano;
+                // Debilitar Mana
+                if (habilidade.custo > 0) {
+                    this.mana -= habilidade.custo;
+                    this.energia += 50;
+                }
+            } else {
+                return "Sem mana ou energia.";
+            }
+            
     }
 }
 class habilidade{
@@ -41,7 +56,18 @@ let listaHabilidades = [
     new habilidade(3, "👾 Supremo", 15, 0, 100)
 ];
 listaHabilidades.forEach(hab => {
+    console.log(hab)
     let btn = document.createElement("button");//<button>
-    btn.interText = hab.home;
+    btn.innerText = hab.nome;
+    btn.classList.add("btn", "btn-outline-warning")
     containerBtn.appendChild(btn);
-})
+    btn.onclick= () => {
+        hero.hero_atacar(boss, hab);
+        atualizarTela()
+    }
+});
+const atualizarTela = () => {
+    document.getElementById("hp-boss").value = boss.hp;
+    document.getElementById("mp-hero").value = hero.mana;
+    document.getElementById("en-hero").value = hero.energia;
+}
